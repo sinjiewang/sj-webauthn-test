@@ -1,0 +1,572 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sjwebauthntest-dev-32044-authRole",
+      "UnauthRoleArn": "arn:aws:iam::073903779593:role/amplify-sjwebauthntest-dev-32044-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::073903779593:role/amplify-sjwebauthntest-dev-32044-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+      "UnauthRoleName": "amplify-sjwebauthntest-dev-32044-unauthRole",
+      "StackName": "amplify-sjwebauthntest-dev-32044",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:073903779593:stack/amplify-sjwebauthntest-dev-32044/936f1d60-2c2c-11ee-98cc-06a27d353247",
+      "AmplifyAppId": "d2s6lvngphgv3",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    }
+  },
+  "function": {
+    "sjwebauthntest483c852aDefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2023-07-28T07:52:27.991Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-28T07:52:28.016Z",
+      "distZipFilename": "sjwebauthntest483c852aDefineAuthChallenge-3672724a69692b434849-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntest483c852aDefineAuthChallenge-3672724a69692b434849-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntest483c852aDefineAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntest483c852aDefineAuthChallenge"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.790Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntest483c852aDefineAuthChallenge-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntest483c852aDefineAuthChallenge-dev",
+        "Name": "sjwebauthntest483c852aDefineAuthChallenge-dev",
+        "LambdaExecutionRole": "sjwebauthntest483c852aDefineAuthChallenge-dev"
+      },
+      "lastPushDirHash": "Lt5IrsIVYB9itgDuPY01hEwSdE4="
+    },
+    "sjwebauthntest483c852aCreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2023-07-28T07:58:49.831Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-28T07:58:50.076Z",
+      "distZipFilename": "sjwebauthntest483c852aCreateAuthChallenge-356d62726b672f4f2f57-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntest483c852aCreateAuthChallenge-356d62726b672f4f2f57-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntest483c852aCreateAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntest483c852aCreateAuthChallenge"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.794Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntest483c852aCreateAuthChallenge-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntest483c852aCreateAuthChallenge-dev",
+        "Name": "sjwebauthntest483c852aCreateAuthChallenge-dev",
+        "LambdaExecutionRole": "sjwebauthntest483c852aCreateAuthChallenge-dev"
+      },
+      "lastPushDirHash": "pZIYmAd1GPJyeBunGLW9m88PQwM=",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "sjwebauthntest",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        }
+      ]
+    },
+    "sjwebauthntest483c852aVerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2023-07-28T08:07:25.132Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-28T08:07:30.808Z",
+      "distZipFilename": "sjwebauthntest483c852aVerifyAuthChallengeResponse-4a67363655676a397864-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntest483c852aVerifyAuthChallengeResponse-4a67363655676a397864-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntest483c852aVerifyAuthChallengeResponse-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntest483c852aVerifyAuthChallengeResponse"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:06.034Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntest483c852aVerifyAuthChallengeResponse-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntest483c852aVerifyAuthChallengeResponse-dev",
+        "Name": "sjwebauthntest483c852aVerifyAuthChallengeResponse-dev",
+        "LambdaExecutionRole": "sjwebauthntest483c852aVerifyAuthChallengeResponse-dev"
+      },
+      "lastPushDirHash": "Q9WOnRNiak2LnKj0nXcIhe+CKTg=",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn",
+          "attributes": [
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "sjwebauthntestlayerCognitoActions": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true,
+      "lastBuildTimeStamp": "2023-07-27T03:44:54.034Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-27T03:44:56.438Z",
+      "distZipFilename": "sjwebauthntestlayerCognitoActions-LambdaLayerVersion7fcbf25a-build.zip",
+      "latestPushedVersionHash": "903c7d879cee04b0f22cbadff9ddeb7fdfbda7e2ab54ad4e40af9a5292a2662b",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestlayerCognitoActions-LambdaLayerVersion7fcbf25a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestlayerCognitoActions-awscloudformation-template.json",
+        "logicalId": "functionsjwebauthntestlayerCognitoActions"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.802Z",
+      "output": {
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:layer:sjwebauthntestlayerCognitoActions-dev:1"
+      }
+    },
+    "sjwebauthntestlayerDDBActions": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true,
+      "lastBuildTimeStamp": "2023-07-27T03:44:59.707Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-27T03:45:02.055Z",
+      "distZipFilename": "sjwebauthntestlayerDDBActions-LambdaLayerVersion64393527-build.zip",
+      "latestPushedVersionHash": "f8ea9f4ce0cbe6649777cf54bdfbcca8d7909ffdebdec3058632ab2c2413ac0a",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestlayerDDBActions-LambdaLayerVersion64393527-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestlayerDDBActions-awscloudformation-template.json",
+        "logicalId": "functionsjwebauthntestlayerDDBActions"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.805Z",
+      "output": {
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:layer:sjwebauthntestlayerDDBActions-dev:1"
+      }
+    },
+    "sjwebauthntestlayerWebauthn": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true,
+      "lastBuildTimeStamp": "2023-07-27T03:45:05.560Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-27T03:45:06.980Z",
+      "distZipFilename": "sjwebauthntestlayerWebauthn-LambdaLayerVersion6903a35a-build.zip",
+      "latestPushedVersionHash": "ef914d823263ebdcb752ba3938d18bba81316ea3f31b40db4bcd25c9fb8fef2c",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestlayerWebauthn-LambdaLayerVersion6903a35a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestlayerWebauthn-awscloudformation-template.json",
+        "logicalId": "functionsjwebauthntestlayerWebauthn"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.807Z",
+      "output": {
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:layer:sjwebauthntestlayerWebauthn-dev:1"
+      }
+    },
+    "sjwebauthntestregister": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "sjwebauthntest",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        }
+      ],
+      "lastPushTimeStamp": "2023-07-28T08:09:05.809Z",
+      "lastBuildTimeStamp": "2023-07-28T01:32:58.924Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-28T01:33:03.024Z",
+      "distZipFilename": "sjwebauthntestregister-3736674a76306c384f75-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestregister-3736674a76306c384f75-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestregister-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntestregister"
+      },
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntestLambdaRoled3c17825-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntestregister-dev",
+        "Name": "sjwebauthntestregister-dev",
+        "LambdaExecutionRole": "sjwebauthntestLambdaRoled3c17825-dev"
+      },
+      "lastPushDirHash": "Hf5tyLC1CkpR6ssZI2v9kNaIcZo="
+    },
+    "sjwebauthntestregisterresponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "sjwebauthntest",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        }
+      ],
+      "lastPushTimeStamp": "2023-07-28T08:09:05.812Z",
+      "lastBuildTimeStamp": "2023-07-27T05:17:37.842Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-27T05:17:39.882Z",
+      "distZipFilename": "sjwebauthntestregisterresponse-716e3466627832695879-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestregisterresponse-716e3466627832695879-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestregisterresponse-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntestregisterresponse"
+      },
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntestLambdaRole736f1280-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntestregisterresponse-dev",
+        "Name": "sjwebauthntestregisterresponse-dev",
+        "LambdaExecutionRole": "sjwebauthntestLambdaRole736f1280-dev"
+      },
+      "lastPushDirHash": "YNfgEOkgdeoWzSx/jjNfTn/SOjY="
+    },
+    "sjwebauthntestprelogin": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "sjwebauthntest",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions",
+          "attributes": [
+            "Arn"
+          ]
+        }
+      ],
+      "lastBuildTimeStamp": "2023-07-27T07:26:51.395Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-27T07:26:52.703Z",
+      "distZipFilename": "sjwebauthntestprelogin-727858783273556f6769-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestprelogin-727858783273556f6769-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestprelogin-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntestprelogin"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.814Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntestLambdaRolebdf72b24-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntestprelogin-dev",
+        "Name": "sjwebauthntestprelogin-dev",
+        "LambdaExecutionRole": "sjwebauthntestLambdaRolebdf72b24-dev"
+      },
+      "lastPushDirHash": "VC7/+mN+dW3ZoPm4saz/C1rSh9E="
+    },
+    "sjwebauthntestverify": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "sjwebauthntest",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        }
+      ],
+      "lastBuildTimeStamp": "2023-07-27T09:13:31.650Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-07-27T09:13:33.641Z",
+      "distZipFilename": "sjwebauthntestverify-6c6a6549426373576654-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-sjwebauthntest-dev-32044-deployment",
+        "s3Key": "amplify-builds/sjwebauthntestverify-6c6a6549426373576654-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/function/sjwebauthntestverify-cloudformation-template.json",
+        "logicalId": "functionsjwebauthntestverify"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.816Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::073903779593:role/sjwebauthntestLambdaRoleb0fbab8a-dev",
+        "Region": "ap-northeast-1",
+        "Arn": "arn:aws:lambda:ap-northeast-1:073903779593:function:sjwebauthntestverify-dev",
+        "Name": "sjwebauthntestverify-dev",
+        "LambdaExecutionRole": "sjwebauthntestLambdaRoleb0fbab8a-dev"
+      },
+      "lastPushDirHash": "so0iRF3z7wo/aBRX/B6nZwXB/pI="
+    }
+  },
+  "auth": {
+    "sjwebauthntest483c852a": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aDefineAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aCreateAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aVerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": true,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/auth/sjwebauthntest483c852a-cloudformation-template.json",
+        "logicalId": "authsjwebauthntest483c852a"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.818Z",
+      "output": {
+        "UserPoolId": "ap-northeast-1_P1niUTG0F",
+        "AppClientIDWeb": "2rmqm3699k3cs1e7oj4puf9ouq",
+        "AppClientID": "5r59qedoauff8l4eehfb6q63kb",
+        "IdentityPoolId": "ap-northeast-1:74fa5fd9-e83a-4a52-944c-454d47beefb4",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-northeast-1:073903779593:userpool/ap-northeast-1_P1niUTG0F",
+        "IdentityPoolName": "sjwebauthntest483c852a_identitypool_483c852a__dev",
+        "UserPoolName": "sjwebauthntest483c852a_userpool_483c852a"
+      },
+      "lastPushDirHash": "vlMeEG7uQB4dfPG8pPlFr4aVrgw="
+    }
+  },
+  "api": {
+    "sjwebauthntest": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authsjwebauthntest483c852a"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 365,
+                "apiKeyExpirationDate": "2024-07-26T03:24:57.950Z",
+                "description": ""
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "34cdnuphy5cobg3brwsjtgklh4",
+        "GraphQLAPIEndpointOutput": "https://vw5p7xyxk5as5e252xaynpyfxq.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-6kxm3ilqvfdzjpkw5iqpjsg6je"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.819Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apisjwebauthntest"
+      },
+      "lastPushDirHash": "jgr4Q+iJNFhvoeLxkfbMzrQ3/3Y="
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sjwebauthntest-dev-32044-deployment/amplify-cfn-templates/hosting/template.json",
+        "logicalId": "hostingS3AndCloudFront"
+      },
+      "lastPushTimeStamp": "2023-07-28T08:09:05.821Z",
+      "output": {
+        "CloudFrontSecureURL": "https://d1ael32fptzs8f.cloudfront.net",
+        "S3BucketSecureURL": "https://sjwebauthntest-20230727054340-hostingbucket-dev.s3.amazonaws.com",
+        "CloudFrontOriginAccessIdentity": "E1Q5SVJO2MJQMX",
+        "WebsiteURL": "http://sjwebauthntest-20230727054340-hostingbucket-dev.s3-website-ap-northeast-1.amazonaws.com",
+        "CloudFrontDistributionID": "E2F61L43AGESP8",
+        "Region": "ap-northeast-1",
+        "HostingBucketName": "sjwebauthntest-20230727054340-hostingbucket-dev",
+        "CloudFrontDomainName": "d1ael32fptzs8f.cloudfront.net"
+      },
+      "lastPushDirHash": "kLQqkrkakH1Tg8BAaoCJknAz9v4="
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "version": "1",
+  "region": "ap-northeast-1",
+  "userPoolId": "ap-northeast-1_yhswtlirG",
+  "userName": "b7748aa8-90a1-7087-52cb-7c10b3292335",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-unknown-unknown",
+    "clientId": "3j8cm3q3qudjqrs8d4fhd6feob"
+  },
+  "triggerSource": "VerifyAuthChallengeResponse_Authentication",
+  "request": {
+    "userAttributes": {
+      "sub": "b7748aa8-90a1-7087-52cb-7c10b3292335",
+      "cognito:user_status": "CONFIRMED",
+      "email_verified": "true",
+      "email": "sinjie.wang@vivotek.com"
+    },
+    "privateChallengeParameters": {
+      "answer": {
+        "sub": "b7748aa8-90a1-7087-52cb-7c10b3292335",
+        "authenticator": {
+          "counter": 0,
+          "credID": "_qkobzzaiGYwK2XKHuTK9fgj5DuwjfEX5n7J8ZyTM8s",
+          "fmt": "fido-u2f",
+          "publicKey": "BGLUDuES-mnC37t3GW5jHIY8SRjFVmKy3YaOI9r8q9W5cyXNnZm83Z6tEqNnFCLUmEwk-SOtB3KyGBM27uXxqbY"
+        },
+        "challenge": "K9AXveIoWYba5GWSisqtDIqLvRYDwAaH5nK1m9RyLao"
+      }
+    },
+    "challengeAnswer": {
+      "id": "_qkobzzaiGYwK2XKHuTK9fgj5DuwjfEX5n7J8ZyTM8s",
+      "rawId": "_qkobzzaiGYwK2XKHuTK9fgj5DuwjfEX5n7J8ZyTM8s",
+      "type": "public-key",
+      "response": {
+        "authenticatorData": "LQZHEpYy9q_XdPqdeLxPx89KAiftr9_oxHrjFvYRAoAFAAAAAQ",
+        "signature": "MEYCIQCLF2dZgJUb-JUGpoGn9dr99wjqs32kYRIUyp3lW5oyMQIhANheXxVW8nWOPzkywc-EMaV2jlyxfa-qlnW7ywqwIUoN",
+        "userHandle": "-mk3Y7iqcWbedY4BM7B1iZOO984Igla0GVP7K03wZqk",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiSzlBWHZlSW9XWWJhNUdXU2lzcXRESXFMdlJZRHdBYUg1bksxbTlSeUxhbyIsIm9yaWdpbiI6Imh0dHBzOi8vZDFhZWwzMmZwdHpzOGYuY2xvdWRmcm9udC5uZXQiLCJjcm9zc09yaWdpbiI6ZmFsc2V9"
+      }
+    },
+    "userNotFound": false
+  },
+  "response": { "answerCorrect": null }
+}
