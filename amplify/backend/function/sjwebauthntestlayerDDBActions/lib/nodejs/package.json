@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.1423.0",
+    "axios": "^1.4.0",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,102 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+# register
+type WebAuthn @model {
+  sub: String! @primaryKey
+  challenge: String!
+  authrInfo: Authenticator
+}
+
+type Authenticator @model {
+  fmt: String!
+  publicKey: String!
+  counter: Int!
+  credID: String!
+}
+
+type User {
+  id: String!
+  name: String!
+  displayName: String!
+}
+
+type AuthenticatorSelection {
+  authenticatorAttachment: String!
+}
+
+type RelyingParty {
+  name: String!
+  id: String
+}
+
+type pubKeyCredParam {
+  alg: Int!
+  type: String!
+}
+
+type PublicKeyOutput {
+  challenge: String!
+  user: User
+  attestation: String
+  authenticatorSelection: AuthenticatorSelection
+  rp: RelyingParty
+  pubKeyCredParams: [pubKeyCredParam]
+}
+
+# prelogin
+type AllowCredential @aws_api_key @aws_cognito_user_pools {
+  type: String!
+  id: String!
+  transports: [String]
+}
+
+type PreloginOutput @aws_api_key @aws_cognito_user_pools {
+  allowCredentials: [AllowCredential!]
+  challenge: String!
+}
+
+type Query {
+  register: PublicKeyOutput @function(name: "sjwebauthntestregister-dev") @aws_cognito_user_pools
+  prelogin(account: String!): PreloginOutput @function(name: "sjwebauthntestprelogin-dev") @aws_api_key @aws_cognito_user_pools
+}
+
+# registerResponse
+input RegisterResponseInput {
+  id: String!
+  rawId: String!
+  type: String!
+  response: CredentialResponseInput!
+}
+
+input CredentialResponseInput {
+  attestationObject: String!
+  clientDataJSON: String!
+}
+
+# verify
+input VerifyInput {
+  id: String!
+  rawId: String!
+  type: String!
+  response: SignatureResponseInput!
+}
+
+input SignatureResponseInput {
+  authenticatorData: String!
+  signature: String!
+  userHandle: String!
+  clientDataJSON: String!
+}
+
+type VerifiedOutput {
+  verified: Boolean!
+}
+
+type Mutation {
+  registerResponse(input: RegisterResponseInput): VerifiedOutput
+    @function(name: "sjwebauthntestregisterresponse-dev") @aws_cognito_user_pools
+  verify(input: VerifyInput, account: String!): VerifiedOutput
+    @function(name: "sjwebauthntestverify-dev") @aws_cognito_user_pools
+}

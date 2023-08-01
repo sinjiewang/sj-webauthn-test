@@ -1,0 +1,482 @@
+{
+  "api": {
+    "sjwebauthntest": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2024-07-26T03:24:57.950Z",
+                "apiKeyExpirationDays": 365,
+                "description": ""
+              },
+              "authenticationType": "API_KEY"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authsjwebauthntest483c852a"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "sjwebauthntest483c852a": {
+      "customAuth": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aDefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aCreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aVerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "sjwebauthntest483c852aCreateAuthChallenge": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "sjwebauthntest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sjwebauthntest483c852aDefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sjwebauthntest483c852aVerifyAuthChallengeResponse": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sjwebauthntestlayerCognitoActions": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "sjwebauthntestlayerDDBActions": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "sjwebauthntestlayerWebauthn": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "sjwebauthntestprelogin": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "sjwebauthntest"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sjwebauthntestregister": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "sjwebauthntest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sjwebauthntestregisterresponse": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "sjwebauthntest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sjwebauthntestverify": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sjwebauthntest483c852a"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "sjwebauthntest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_sjwebauthntest483c852aCreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aCreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntest483c852aCreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aCreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntest483c852aDefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntest483c852aDefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aDefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntest483c852aVerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntest483c852aVerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntest483c852aVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestlayerCognitoActions_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestlayerCognitoActions_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerCognitoActions"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestlayerDDBActions_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestlayerDDBActions_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerDDBActions"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestlayerWebauthn_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestlayerWebauthn_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestlayerWebauthn"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestprelogin_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestprelogin"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestprelogin_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestprelogin"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestregister_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestregister"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestregister_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestregister"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestregisterresponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestregisterresponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestregisterresponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestregisterresponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestverify_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestverify"
+        }
+      ]
+    },
+    "AMPLIFY_function_sjwebauthntestverify_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sjwebauthntestverify"
+        }
+      ]
+    }
+  }
+}
